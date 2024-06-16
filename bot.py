@@ -18,7 +18,7 @@ bot = commands.Bot(command_prefix="=", intents=intents, case_insensitive=True)
 async def on_ready():
     await bot.load_extension("jishaku")
     await bot.tree.sync()
-    print(f"Logged in as {bot.user.name}")
+    print(f"Logged in as {bot.user.name}, Have fun!")
 
 
 # -- Start time

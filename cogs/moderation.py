@@ -19,7 +19,7 @@ class Moderation(commands.Cog):
         embed.add_field(name="Reason:", value=reason, inline=False)
         embed.add_field(name="Moderator:", value=ctx.author.mention, inline=False)
         embed.set_thumbnail(url=self.bot.user.avatar.url)
-        await ctx.send("a"*4001)
+        await ctx.send(embed=embed)
 
 async def setup(bot):
     await bot.add_cog(Moderation(bot))

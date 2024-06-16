@@ -21,19 +21,22 @@ class Utility(commands.Cog):
         seconds = seconds % 60
         uptime_str = f"{days}d {hours}h {minutes}m {seconds}s"
 
-        embed = discord.Embed(title="Pong!", color=0xc3e0ff)
-        embed.add_field(name="**Latency:**", value=f"``{round(self.bot.latency * 1000)}ms``", inline=False)
-        embed.add_field(name="\u200b", value="⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯")
-        embed.add_field(name="**Uptime:**", value=f"``{uptime_str}``", inline=False)
-        embed.set_thumbnail(url=self.bot.user.avatar.url)
-
+        embed = (
+            discord.Embed(title="Pong!", color=0xc3e0ff)
+        .add_field(name="**Latency:**", value=f"``{round(self.bot.latency * 1000)}ms``", inline=False)
+        .add_field(name="\u200b", value="⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯")
+        .add_field(name="**Uptime:**", value=f"``{uptime_str}``", inline=False)
+        .set_thumbnail(url=self.bot.user.avatar.url)
+        )
         await ctx.send(embed=embed)
 
     @commands.hybrid_command(name='info', aliases=['i', 'information'])
     async def   info(self, ctx: commands.Context):
-        embed = discord.Embed(title="Welcome to EV systems", color=0xc3e0ff)
-        embed.add_field(name="**Info!**", value=f"Ran by <@506525614589870080>, this server is the official testing ground for his coding capabilities!", inline=False)
-        embed.set_thumbnail(url=ctx.bot.user.avatar.url)
+        embed = (
+            discord.Embed(title="Welcome to EV systems", color=0xc3e0ff)
+        .add_field(name="**Info!**", value=f"Ran by <@506525614589870080>, this server is the official testing ground for his coding capabilities!", inline=False)
+        .set_thumbnail(url=ctx.bot.user.avatar.url)
+        )
         await ctx.send(embed=embed)
 
     @commands.hybrid_command(name='invite', aliases=['inv'])
